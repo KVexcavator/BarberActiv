@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2018_09_21_160039) do
     t.text "name"
     t.text "pfone"
     t.text "datestamp"
-    t.text "barber"
+    t.text "master"
     t.text "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
