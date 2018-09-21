@@ -12,6 +12,10 @@ class Master < ActiveRecord::Base
 end
 
 get '/' do
-	@masters=Master.all
+	#вывод всех
+	#@masters=Master.all 
+
+	#вывод с сортировкой
+	@masters=Master.order "created_at DESC"
 	erb :index			
 end
