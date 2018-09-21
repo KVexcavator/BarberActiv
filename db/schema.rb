@@ -18,10 +18,14 @@ ActiveRecord::Schema.define(version: 2018_09_21_160039) do
     t.text "datestamp"
     t.text "barber"
     t.text "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "masters", force: :cascade do |t|
     t.text "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

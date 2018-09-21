@@ -12,5 +12,5 @@ class Master < ActiveRecord::Base
 end
 
 get '/' do
-	erb "Hello!"			
+	erb :index			
 end
