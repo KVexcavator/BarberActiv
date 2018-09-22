@@ -50,11 +50,13 @@ post '/visit' do
 
 	if @name !="" and @pfone!="" and @data_time!=""
 			
-			Client.create :name => @name,
-		                :pfone => @pfone,
-			              :datestamp => @data_time,
-			              :master => @master,
-			              :color => @color
+			c=Client.new 
+			c.name = @name
+      c.pfone = @pfone
+			c.datestamp = @data_time
+			c.master = @master
+			c.color = @color
+			c.save
 
 	    
 	    erb "<h2>Уважаемый #{@name}, Ваша запись сохранена, ждём Вас #{@data_time}.<h2/>"
