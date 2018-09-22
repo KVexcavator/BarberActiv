@@ -50,3 +50,8 @@ get '/master/:id' do
 	@master=Master.find(params[:id])
 	erb :master
 end
+
+get '/bookings' do
+	@clients=Client.order('created_at DESC')
+	erb :bookings
+end
