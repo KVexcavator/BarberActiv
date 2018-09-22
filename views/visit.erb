@@ -2,7 +2,15 @@
 
 <p>Здесь вы можете заполнить форму, для записи к мастеру</p>
 <form action="/visit" method="post">
-		
+	<div class="form-group row">
+		  <label class="col-sm-2 col-form-label col-form-label-sm"
+		   for="master">Выберите мастера</label>
+		  <select  name="client[master]" class="custom-select my-1 mr-sm-2" id="master">
+        <%  @masters.each do |master|%>
+		    <option <%= @c.master== master ['name'] ? 'selected': '' %>><%= master.name %></option>
+		    <% end %>
+		  </select>
+	</div>	
   <div class="form-group row">
     <label for="name" class="col-sm-2 col-form-label col-form-label-sm">Ваше имя</label>
     <div class="col-sm-10">
