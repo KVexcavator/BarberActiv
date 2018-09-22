@@ -46,7 +46,7 @@ post '/visit' do
 		
 end
 
-get '/master/:num' do
-	num=params[:num]
-	erb "страница мастера "
+get '/master/:id' do
+	id=params[:id]
+	erb :master
 end
