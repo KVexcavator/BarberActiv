@@ -47,6 +47,6 @@ post '/visit' do
 end
 
 get '/master/:id' do
-	id=params[:id]
+	@master=Master.find(params[:id])
 	erb :master
 end
