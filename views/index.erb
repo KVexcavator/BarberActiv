@@ -1,6 +1,6 @@
 <h3>Masters list</h3>
 <%  @masters.each do |master| %>
   <div>
-    <p><%= master.name %></p>
+    <p><a href="/master/<%= master.id  %>"><%= master.name %></a></p>
   </div>
 <%  end %>
