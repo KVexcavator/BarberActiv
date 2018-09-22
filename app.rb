@@ -31,35 +31,9 @@ end
 
 post '/visit' do
 	
-	@name        = params[ :name]
-	@pfone       = params[ :pfone]
-	@data_time   = params[ :data_time]
-	@master      = params[ :master]
-	@color       = params[ :color]
+	c=Client.new params[ :client]
+	c.save
 
-	#хеш сообщений об ошибке
-	hh={ :name       => "Enter name",
-       :pfone      => "Enter pfone",
-       :data_time  => "Enter date and time",
-	}
-
-	@error=hh.select{|key,_| params[key]==''}.values.join(', ')
-	if @error !=''
-		return erb :visit
-	end
-
-	if @name !="" and @pfone!="" and @data_time!=""
-			
-			c=Client.new 
-			c.name = @name
-      c.pfone = @pfone
-			c.datestamp = @data_time
-			c.master = @master
-			c.color = @color
-			c.save
-
-	    
-	    erb "<h2>Уважаемый #{@name}, Ваша запись сохранена, ждём Вас #{@data_time}.<h2/>"
-	end
+	erb "Спасибо, Вы записались!"
 		
 end
